@@ -1,6 +1,6 @@
-(defproject cljfmt "0.6.1-ALIGN"
-  :description "A library for formatting Clojure code"
-  :url "https://github.com/weavejester/cljfmt"
+(defproject pez/cljfmt "0.0.1-SNAPSHOT"
+  :description "An adapted cljfmt used by Calva Formatter"
+  :url "https://github.com/PEZ/cljfmt"
   :scm {:dir ".."}
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}

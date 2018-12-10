@@ -1,4 +1,4 @@
-(defproject pez/cljfmt "0.6.2-ALIGN"
+(defproject pez/cljfmt "0.6.3-ALIGN"
   :description "A library for formatting Clojure code"
   :url "https://github.com/PEZ/cljfmt"
   :scm {:dir ".."}

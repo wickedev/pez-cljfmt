@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/weavejester/cljfmt.svg?branch=master)](https://travis-ci.org/weavejester/cljfmt)
 
-cljfmt is a tool for formatting Clojure code.
+cljfmt is a tool for formatting Clojure code [idiomatically][].
 
 It can turn something like this:
 
@@ -22,13 +22,17 @@ Into nicely formatted Clojure code like this:
   (+ (* x x) (* y y)))
 ```
 
+However, it is not the goal of cljfmt to provide a canonical format.
+
+[idiomatically]: https://github.com/bbatsov/clojure-style-guide
+
 ## Installation
 
 The easiest way to get started with cljfmt is to add the lein-cljfmt
 plugin to your [Leiningen][] project map:
 
 ```clojure
-:plugins [[lein-cljfmt "0.6.1"]]
+:plugins [[lein-cljfmt "0.6.2"]]
 ```
 
 cljfmt has tested on Leiningen 2.5, but may not work on older
@@ -64,6 +68,7 @@ As with the `check` task, you can choose to fix a specific file:
 * [vim-cljfmt](https://github.com/venantius/vim-cljfmt)
 * [CIDER 0.9+](https://github.com/clojure-emacs/cider)
 * [Calva Clojure Formatter](https://github.com/BetterThanTomorrow/calva-fmt) (VS Code)
+* [clojureVSCode](https://github.com/avli/clojureVSCode) (VS Code)
 
 ## Configuration
 

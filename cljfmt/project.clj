@@ -1,4 +1,4 @@
-(defproject pez/cljfmt "0.0.2-SNAPSHOT"
+(defproject pez/cljfmt "0.0.3-SNAPSHOT"
   :description "An adapted cljfmt used by Calva Formatter"
   :url "https://github.com/PEZ/cljfmt"
   :scm {:dir ".."}

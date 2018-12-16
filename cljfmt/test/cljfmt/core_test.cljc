@@ -132,6 +132,16 @@
           "          (* x x))]"
           "  (foo 5))"]))
     (is (reformats-to?
+         ["(letfn [(foo [x]"
+          "(* x x))"
+          "(bar [x]\n(+ x x))]"
+          "(foo 5))"]
+         ["(letfn [(foo [x]"
+          "          (* x x))"
+          "        (bar [x]"
+          "          (+ x x))]"
+          "  (foo 5))"]))
+    (is (reformats-to?
          ["(reify Closeable"
           "(close [_]"
           "(prn :closed)))"]
@@ -466,6 +476,18 @@
           ")"]
          ["(let []"
           "  )"]
+         {:remove-surrounding-whitespace? false}))
+    (is (reformats-to?
+         ["(cond foo"
+          "  )"]
+         ["(cond foo"
+          "      )"]
+         {:remove-surrounding-whitespace? false}))
+    (is (reformats-to?
+         ["(cond foo"
+          "bar)"]
+         ["(cond foo"
+          "      bar)"]
          {:remove-surrounding-whitespace? false}))
     (is (reformats-to?
          ["["
@@ -829,7 +851,34 @@
         ""]
        ["(foo bar) "
         ""]
-       {:remove-trailing-whitespace? false})))
+       {:remove-trailing-whitespace? false}))
+  (is (reformats-to?
+       ["(foo"
+        " "
+        ")"]
+       ["(foo"
+        " "
+        " )"]
+       {:remove-surrounding-whitespace? false
+        :remove-trailing-whitespace? false}))
+  (is (reformats-to?
+       ["( "
+        "foo"
+        " )"]
+       ["( "
+        " foo"
+        " )"]
+       {:remove-surrounding-whitespace? false
+        :remove-trailing-whitespace? false}))
+  (is (reformats-to?
+       ["(foo"
+        "   bar "
+        ")"]
+       ["(foo"
+        " bar "
+        " )"]
+       {:remove-surrounding-whitespace? false
+        :remove-trailing-whitespace? false})))
 
 (deftest test-parsing
   (is (reformats-to?

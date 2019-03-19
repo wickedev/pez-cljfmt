@@ -1,4 +1,4 @@
-(defproject pez/cljfmt "0.0.3-SNAPSHOT"
+(defproject pez/cljfmt "0.0.4-SNAPSHOT"
   :description "An adapted cljfmt used by Calva Formatter"
   :url "https://github.com/PEZ/cljfmt"
   :scm {:dir ".."}
@@ -8,8 +8,8 @@
                  [org.clojure/tools.cli "0.3.7"]
                  [org.clojure/tools.reader "1.2.2"]
                  [com.googlecode.java-diff-utils/diffutils "1.3.0"]
-                 [rewrite-clj "0.6.0"]
-                 [pez/rewrite-cljs "0.4.4-SNAPSHOT"]]
+                 [rewrite-clj "0.6.1"]
+                 [rewrite-cljs "0.4.4"]]
   :plugins [[lein-cljsbuild "1.1.7"]]
   :hooks [leiningen.cljsbuild]
   :cljsbuild {:builds
